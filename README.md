@@ -25,6 +25,31 @@ An AI-powered assistant that helps parents manage school emails.
 
 Gmail → OpenAI → Decision (Notify/Digest/Ignore) → Pushover → SQLite
 
+```text
+Gmail API 
+    │ 
+    ▼ 
+Fetch Emails 
+    │ 
+    ▼ 
+OpenAI + Pydantic 
+EmailDecision Schema 
+    │ 
+ ┌────────┼────────┐ 
+ │        │        │ 
+ ▼        ▼        ▼ 
+Notify  Digest    Ignore 
+ │ 
+ ▼ 
+Pushover 
+ │ 
+ ▼ 
+User Acknowledges 
+ │ 
+ ▼ 
+SQLite Database
+```
+
 ## Setup
 
 Clone the repository:
@@ -46,6 +71,10 @@ OPENAI_API_KEY=...
 PUSHOVER_API_TOKEN=...
 PUSHOVER_USER_KEY=...
 ```
+
+Configure Gmail OAuth credentials:
+
+credentials.json
 
 Run:
 
